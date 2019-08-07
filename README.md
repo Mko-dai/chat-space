@@ -1,24 +1,45 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## membersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-Things you may want to cover:
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* Ruby version
+## groupsテーブル
+|Column|Type|Option|
+|------|----|------|
+|group_name|string|null: false|
 
-* System dependencies
+### Association
+- has_many :members 
+- has_many :users, through: :members
+- has_many :chats
 
-* Configuration
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
 
-* Database creation
+### Association
+- has_many :chats
+- has_many :members, 
+- has_many :groups, through: :members
 
-* Database initialization
+## chatsテーブル
+|Column|Type|Option|
+|------|----|------|
+|text|text|null: false|
+|image|text||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :group
