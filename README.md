@@ -3,8 +3,8 @@
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -13,7 +13,7 @@
 ## groupsテーブル
 |Column|Type|Option|
 |------|----|------|
-|group_name|string|null: false|
+|group|string|null: false|
 
 ### Association
 - has_many :members 
@@ -23,7 +23,7 @@
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
 
@@ -35,10 +35,10 @@
 ## chatsテーブル
 |Column|Type|Option|
 |------|----|------|
-|text|text|null: false|
+|text|text||
 |image|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
