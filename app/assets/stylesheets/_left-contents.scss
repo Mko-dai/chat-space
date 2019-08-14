@@ -1,0 +1,43 @@
+.contents-left {
+  position: fixed;  
+  box-sizing: border-box;
+  padding-top:24px;
+  float:left;
+  width: $leftContentsWidth;
+  height: 100%;
+  color: $white;
+  font-weight: bold;
+  &__user {
+    box-sizing: border-box;
+    background-color: #253141;
+    padding:0px 20px;
+    height: 82px;
+    width: $leftContentsWidth;
+    font-size: 16px;
+    line-height: 82px;
+    &__btn  {
+      float:right;
+    }
+  }
+  &__group {
+    box-sizing: border-box;
+    background-color: #2f3e51;
+    padding:0px 20px;
+    height: 100vh;
+    width: $leftContentsWidth;
+    &__name {
+      box-sizing: border-box;
+      padding-top: 20px;
+      font-size:15px;
+      line-height:15px;
+      width: $leftContentsWidth;
+    }
+    &__message {
+      box-sizing: border-box;
+      padding-top:5px;
+      font-size:11px;
+      line-height:11px;
+      width: $leftContentsWidth;
+    }
+  }
+}

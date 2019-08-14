@@ -1,0 +1,30 @@
+.contents-right
+  .contents-right__header
+    .contents-right__header__edit
+      Edit
+    .contents-right__header__group-name
+      ongaku
+    .contents-right__header__group-member
+      Member : Koji kekie kohei koudai
+  .contents-right__chats-space
+    .contents-right__chats-space__message
+      %b
+        koudai
+      %a
+        2019/08/29(thu) 17:47:11
+      %br
+        Hello!
+    .contents-right__chats-space__message
+      %b
+        koudai
+      %a
+        2019/08/29(thu) 17:47:11
+      %br
+        Hello!
+  .contents-right__footer
+    .contents-right__footer__space
+      %label.upload-label{for: "upload-icon"}
+        = fa_icon "image"
+        %input{type: "file", id: "upload-icon", class: "hidden-file-field"}
+      %textarea.contents-right__footer__space__message{autofocus:"true",placeholder:"コメントを入力してください",cols:"30",name:"text",rows:"10"}
+      %input.contents-right__footer__space__send{type:"submit",value:"Send"}

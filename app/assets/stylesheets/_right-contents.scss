@@ -1,0 +1,100 @@
+.contents-right {
+  box-sizing: border-box;
+  padding-top: 24px;
+  width: $rightContentsWidth;
+  height: calc(100vh - 24px);
+  position:relative;
+  left:300px;
+  z-index: -1;
+  &__header {
+    position: fixed;
+    background-color:$white;
+    box-sizing: border-box;
+    border-bottom: solid 2px #eeeeee;
+    height: 82px;
+    width: $rightContentsWidth;
+    padding-right:40px; 
+    &__group-name { 
+      padding: 35px 0px 0px 40px;
+      box-sizing: border-box;
+      font-size: 20px;
+      line-height: 20px;
+      width: $rightContentsWidth;
+    }
+    &__group-member { 
+      padding: 15px 0px 0px 40px;
+      box-sizing: border-box;
+      font-size: 12px;
+      line-height: 12px;
+      width: $rightContentsWidth;
+    }
+    &__edit {
+      box-sizing: border-box;
+      float:right;
+      line-height: 40px;
+      padding:0px 20px;
+      margin-top:28px;
+      color: #38AEF0;
+      border: solid 1px #38AEF0;
+    }  
+  }
+  &__chats-space {
+    box-sizing: border-box;
+    height: calc(100vh - 82px);
+    width: $rightContentsWidth;
+    padding: 88px 0px 0px 40px;
+    &__message {
+      box-sizing: border-box;
+      padding-top: 40px;
+      a {
+        font-size: 12px;
+        line-height:12px;
+      }
+    }
+  }    
+  &__footer {
+      box-sizing: border-box;
+      width: $rightContentsWidth;
+      height: 70px;
+      background-color: gray;
+      bottom:0;
+      position:fixed;
+      padding:10px 40px 0px 40px;
+      &__space {
+        box-sizing: border-box;
+        height: 50px;
+        i.fa.fa-image::before {
+          position:relative;
+          right:26px;
+          top:10px;
+        }
+        &__message {
+          resize: none;
+          box-sizing: border-box;
+          background-color: $white;
+          float:left;
+          width: 80%;
+          font-size: 16px;
+          height: 100%;
+          padding-right:26px;
+        }
+        
+        &__send {
+          box-sizing: border-box;
+          background-color: #38AEF0;
+          text-align: center;
+          color: $white;
+          margin-left:15px;
+          float:right;
+          width: calc(20% - 15px);
+          height:100%;
+          font-size: 16px;
+          position: relative;
+          bottom:25px;
+        }
+      }
+  }
+}
+.hidden-file-field {
+  display: none;
+}

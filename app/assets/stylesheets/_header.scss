@@ -1,0 +1,10 @@
+.header {
+  position: fixed;  
+  background-color: #38AEF0;
+  width: 100vw;
+  &__message  {
+  color: $white;
+  text-align: center;
+  line-height: 24px;
+  }
+}
