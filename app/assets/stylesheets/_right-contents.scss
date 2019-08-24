@@ -1,6 +1,6 @@
 .contents-right {
   box-sizing: border-box;
-  padding-top: 24px;
+  // padding-top: 24px;
   width: $rightContentsWidth;
   height: calc(100vh - 24px);
   position:relative;
@@ -53,44 +53,43 @@
     }
   }    
   &__footer {
+    box-sizing: border-box;
+    width: $rightContentsWidth;
+    height: 70px;
+    background-color: gray;
+    bottom:0;
+    position:fixed;
+    padding:10px 40px 0px 40px;
+    &__space {
       box-sizing: border-box;
-      width: $rightContentsWidth;
-      height: 70px;
-      background-color: gray;
-      bottom:0;
-      position:fixed;
-      padding:10px 40px 0px 40px;
-      &__space {
+      height: 50px;
+      i.fa.fa-image::before {
+        position:relative;
+        right:26px;
+        top:10px;
+      }
+      &__message {
+        resize: none;
         box-sizing: border-box;
-        height: 50px;
-        i.fa.fa-image::before {
-          position:relative;
-          right:26px;
-          top:10px;
+        background-color: $white;
+        float:left;
+        width: 80%;
+        font-size: 16px;
+        height: 100%;
+        padding-right:26px;
         }
-        &__message {
-          resize: none;
-          box-sizing: border-box;
-          background-color: $white;
-          float:left;
-          width: 80%;
-          font-size: 16px;
-          height: 100%;
-          padding-right:26px;
-        }
-        
-        &__send {
-          box-sizing: border-box;
-          background-color: #38AEF0;
-          text-align: center;
-          color: $white;
-          margin-left:15px;
-          float:right;
-          width: calc(20% - 15px);
-          height:100%;
-          font-size: 16px;
-          position: relative;
-          bottom:25px;
+      &__send {
+        box-sizing: border-box;
+        background-color: #38AEF0;
+        text-align: center;
+        color: $white;
+        margin-left:15px;
+        float:right;
+        width: calc(20% - 15px);
+        height:100%;
+        font-size: 16px;
+        position: relative;
+        bottom:25px;
         }
       }
   }

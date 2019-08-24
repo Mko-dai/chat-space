@@ -13,7 +13,7 @@
 ## groupsテーブル
 |Column|Type|Option|
 |------|----|------|
-|group|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :members 
