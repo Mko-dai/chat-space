@@ -1,11 +1,14 @@
+// div.notice {
+//   position: fixed;
+// }
 .contents-right {
   box-sizing: border-box;
   // padding-top: 24px;
   width: $rightContentsWidth;
-  height: calc(100vh - 24px);
+  // height: 100vh;
   position:relative;
   left:300px;
-  z-index: -1;
+  // z-index: -1;
   &__header {
     position: fixed;
     background-color:$white;
@@ -40,12 +43,12 @@
   }
   &__chats-space {
     box-sizing: border-box;
-    height: calc(100vh - 82px);
+    height:100%;
     width: $rightContentsWidth;
-    padding: 88px 0px 0px 40px;
+    padding: 128px 0px 70px 40px;
     &__message {
       box-sizing: border-box;
-      padding-top: 40px;
+      padding-bottom: 40px;
       a {
         font-size: 12px;
         line-height:12px;
@@ -75,7 +78,7 @@
         float:left;
         width: 80%;
         font-size: 16px;
-        height: 100%;
+        height: 50px;
         padding-right:26px;
         }
       &__send {
@@ -86,7 +89,7 @@
         margin-left:15px;
         float:right;
         width: calc(20% - 15px);
-        height:100%;
+        height:50px;
         font-size: 16px;
         position: relative;
         bottom:25px;
