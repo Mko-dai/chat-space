@@ -1,4 +1,3 @@
-# binding.pry
 json.text @chat.text
 json.image_url @chat.image.url
 json.name @chat.user.name

@@ -16,13 +16,6 @@ return html;
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    
-      // width: "300px",
-      // height: "300px",
-    
-      // borderColor: "#00f",
-      // backgroundColor: "#f00"
-    
     $.ajax({
       url: url,
       type: "POST",
@@ -37,7 +30,6 @@ return html;
       $('#chat_text').val('')
       $('.hidden-file-field').val('')
       $('html,body').animate({scrollTop: $('html,body')[0].scrollHeight}, 'fast');
-      console.log(this);
     })
     .fail(function(){
       alert('error')
