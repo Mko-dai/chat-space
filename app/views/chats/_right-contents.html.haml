@@ -10,7 +10,7 @@
       -@group.users.each do |member|
         = member.name
   .contents-right__chats-space
-    -@chats.each do  |chat|
+    -@chats.each do |chat|
       .contents-right__chats-space__message
         %b
           = chat.user.name
@@ -18,11 +18,11 @@
           = chat.created_at.strftime("%Y/%m/%d %H:%M")
         %br
           = chat.text
-          = image_tag chat.image.url if chat.image.present?
+        = image_tag chat.image.url if chat.image.present?
   .contents-right__footer
     .contents-right__footer__space
-      = form_for [@group, @chat] do |f|
-        =f.text_field :text, class:"contents-right__footer__space__message", placeholder:"メッセージを入力してください",row:"10",cols:"30"
+      = form_for [@group, @chat], html: {id:"chat"} do |f|
+        =f.text_field :text, id:"chat_text",class:"contents-right__footer__space__message", placeholder:"メッセージを入力してください",row:"10",cols:"30"
         =f.label :image, class: "upload-label" do
           = fa_icon "image"
           = f.file_field :image, class: "hidden-file-field"
