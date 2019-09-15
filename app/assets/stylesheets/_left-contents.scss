@@ -1,4 +1,6 @@
 .contents-left {
+  a:link {color:white; text-decoration:none }
+  a:visited { color:white; text-decoration:none }
   position: fixed;  
   box-sizing: border-box;
   // padding-top:24px;
@@ -6,8 +8,8 @@
   width: $leftContentsWidth;
   height: 100%;
   color: $white;
-  font-weight: bold;
   &__user {
+    font-weight: bold;
     box-sizing: border-box;
     background-color: #253141;
     padding:0px 20px;
@@ -15,17 +17,22 @@
     width: $leftContentsWidth;
     font-size: 16px;
     line-height: 82px;
-    &__btn  {
+    &__icon {
       float:right;
+      position: relative;
+      bottom:82px;
+    
     }
   }
   &__group {
+    
     box-sizing: border-box;
     background-color: #2f3e51;
     padding:0px 20px;
     height: 100vh;
     width: $leftContentsWidth;
     &__name {
+      text-decoration: none;
       box-sizing: border-box;
       padding-top: 20px;
       font-size:15px;
@@ -33,11 +40,15 @@
       width: 260px;
     }
     &__message {
+      text-decoration: none;
       box-sizing: border-box;
       padding-top:5px;
       font-size:11px;
       line-height:11px;
       width: 260px;
     }
+  
   }
+  
+  
 }
