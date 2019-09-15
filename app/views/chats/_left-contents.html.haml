@@ -1,13 +1,12 @@
 .contents-left
   .contents-left__user
-    = current_user.name
-    .contents-left__user__btn
-      %button
-        = link_to edit_user_path(current_user) do
-          = fa_icon "edit"   
-      %button
-        = link_to new_group_path do
-          = fa_icon "gear"  
+    .contents-left__user__name
+      = current_user.name
+    .contents-left__user__icon
+      = link_to new_group_path do
+        = fa_icon "edit"   
+      = link_to edit_user_path(current_user.id) do
+        = fa_icon "gear"  
   .contents-left__group 
     - current_user.groups.each do |group|
       = link_to group_chats_path(group) do
