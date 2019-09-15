@@ -57,7 +57,6 @@ function appendErrMsgToHTML(msg) {
     $(this).parent().remove();
     var name = this.getAttribute("data-user-name");
     var id = this.getAttribute("data-user-id");
-    console.log(this);
     $.ajax({
       type: 'GET',
       url: '/users/new',
