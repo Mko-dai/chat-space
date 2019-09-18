@@ -11,14 +11,14 @@
         = member.name
   .contents-right__chats-space
     -@chats.each do |chat|
-      .contents-right__chats-space__message
+      .contents-right__chats-space__message{data: {id: "#{chat.id}"}}
         %b
           = chat.user.name
         %a
           = chat.created_at.strftime("%Y/%m/%d %H:%M")
         %br
           = chat.text
-        = image_tag chat.image.url if chat.image.present?
+          = image_tag chat.image.url if chat.image.present?
   .contents-right__footer
     .contents-right__footer__space
       = form_for [@group, @chat], html: {id:"chat"} do |f|
