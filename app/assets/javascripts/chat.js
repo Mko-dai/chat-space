@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(chat){
-    var addImage = (chat.image_url !== null) ? `<img src="${chat.image_url}">` : '';
-    var html = `<div id="sounyu" class="contents-right__chats-space__message">
+    var addImage = (chat.image !== null) ? `<img src="${chat.image}">` : '';
+    var html = `<div id="sounyu" class="contents-right__chats-space__message" data-id="${chat.id}">
                 <b>${chat.name}</b>
                 <a>${chat.created_at}</a>
                 <br>
@@ -11,7 +11,27 @@ $(function(){
                 </div>`
 return html;
   };
-  
+    if(document.URL.match(/chats/)) {
+  var reloadchats = function() {
+    last_chat_id = $('.contents-right__chats-space__message:last').data('id');
+    $.ajax({
+      url: 'api/chats',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: last_chat_id}
+    })
+    .done(function(chats) {
+      var insertHTML = '';
+      chats.forEach(function(chat){
+      var num = buildHTML(chat) + insertHTML;
+      $('.contents-right__chats-space').append(num)
+      $('html,body').animate({scrollTop: $('html,body')[0].scrollHeight}, 'fast');
+      });
+    })
+    .fail(function() {
+    });
+  };
+    };
   $('#chat').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -36,5 +56,5 @@ return html;
     });
     return false;
   });
-
+  setInterval(reloadchats, 5000);
 });

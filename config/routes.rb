@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   resources :groups, only: [:index,:new, :create, :edit, :update] do
     resources :chats, only: [:index, :create]
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    resources :chats, only: :index, defaults: { format: 'json' }
+  end
   end
 end
