@@ -1,8 +1,9 @@
 .contents-right {
-  box-sizing: border-box;
+  // padding-bottom:90px;
+  background-color: #fafafa;
   // padding-top: 24px;
-  width: $rightContentsWidth;
-  // height: 100vh;
+  // width: $rightContentsWidth;
+  min-height: calc(100vh - 90px);
   position:relative;
   left:300px;
   // z-index: -1;
@@ -16,19 +17,17 @@
     padding-right:40px; 
     &__group-name { 
       color:#333333;
-      padding: 28px 0px 0px 40px;
-      box-sizing: border-box;
+      margin: 35px 0px 0px 40px;
+    //   box-sizing: border-box;
       font-size: 20px;
-      line-height: 20px;
-      width: $rightContentsWidth;
-      margin-bottom: 15px;
+    //   margin-bottom: 15px;
     }
     &__group-member { 
-      padding: 15px 0px 0px 40px;
-      box-sizing: border-box;
+      margin: 15px 0px 0px 40px;
+    //   box-sizing: border-box;
       font-size: 12px;
-      line-height: 12px;
-      width: $rightContentsWidth;
+      line-height: 18px;
+    //   width: $rightContentsWidth;
       color:#999999;
     }
     &__edit {
@@ -45,7 +44,7 @@
     box-sizing: border-box;
     height:100%;
     width: $rightContentsWidth;
-    padding: 128px 0px 70px 40px;
+    padding: 128px 0px 90px 40px;
     color: #434A54;
     &__message {
       box-sizing: border-box;
@@ -74,30 +73,32 @@
         top:10px;
       }
       &__message {
+        padding-left: 10px;
         resize: none;
         box-sizing: border-box;
         background-color: $white;
         float:left;
-        width: 704px;
+        width: calc(100% - 115px);
         font-size: 16px;
         height: 50px;
-        // padding-right:26px;
         }
       &__send {
         box-sizing: border-box;
         background-color: #38AEF0;
         text-align: center;
         color: $white;
-        // margin-left:15px;
         float:right;
         width: 100px;;
         height:50px;
         font-size: 16px;
         position: relative;
-        }
+        bottom:25px; 
+      }
       }
   }
 }
 .hidden-file-field {
   display: none;
+  width:22.3px;
+  height:21px;
 }

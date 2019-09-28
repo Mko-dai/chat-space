@@ -19,11 +19,11 @@
         %br
           = chat.text
           = image_tag chat.image.url if chat.image.present?
-  .contents-right__footer
-    .contents-right__footer__space
-      = form_for [@group, @chat], html: {id:"chat"} do |f|
-        =f.text_field :text, id:"chat_text",class:"contents-right__footer__space__message", placeholder:"メッセージを入力してください",row:"10",cols:"30"
+  = form_for [@group, @chat], html: {id:"chat"} do |f| 
+    .contents-right__footer
+      .contents-right__footer__space
+        =f.text_field :text, id:"chat_text",class:"contents-right__footer__space__message", placeholder:"type a message",row:"10",cols:"30"
         =f.label :image, class: "upload-label" do
-          = fa_icon "image"
+          = fa_icon "image",class:"icon"
           = f.file_field :image, class: "hidden-file-field"
         =f.submit 'Send', class: "contents-right__footer__space__send"
