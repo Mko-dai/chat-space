@@ -13,14 +13,14 @@
     box-sizing: border-box;
     background-color: #253141;
     padding:0px 20px;
-    height: 82px;
+    height: 100px;
     width: $leftContentsWidth;
     font-size: 16px;
-    line-height: 82px;
+    line-height: 100px;
     &__icon {
       float:right;
       position: relative;
-      bottom:82px;
+      bottom:100px;
     
     }
   }

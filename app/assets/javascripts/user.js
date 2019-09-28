@@ -23,6 +23,8 @@ function appendErrMsgToHTML(msg) {
             return html;
             };
 
+var usersname = [];
+
 $("input#user-search-field.chat-group-form__input").keyup(function(e){
     e.preventDefault();
     var input = $("input#user-search-field.chat-group-form__input").val();
@@ -40,8 +42,9 @@ $("input#user-search-field.chat-group-form__input").keyup(function(e){
       if (users.length !== 0) {
         users.forEach(function(user){
           var htmlnew = appendUser(user);
+          if(usersname.indexOf(user.name) === -1){
           $("#user-search-result").append(htmlnew);
-        });
+        }});
         if (input.length === 0) {
           $(".chat-group-user.clearfix").remove();
         };
@@ -73,6 +76,7 @@ $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__b
     })
 
     .done(function(user){
+      usersname.push(user.name)
       var htmlnew = appendUserInput(user);
       $("#chat-group-user").append(htmlnew);
       
@@ -85,6 +89,13 @@ $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__b
   
   $(document).on("click",".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn", function(e){
     e.preventDefault();
+    var name = $(this).prev().text();
+    for(i=0; i<usersname.length; i++){
+      if(usersname[i] == name){
+      usersname.splice(i,1);
+      }
+    }
     $(this).parent().remove();
+    
   });  
 });
