@@ -22,13 +22,15 @@ function appendErrMsgToHTML(msg) {
   var html = `<div class="chat-group-user__name">${msg}</div>`
             return html;
             };
-  $("input#user-search-field.chat-group-form__input").keyup(function(e){
+
+$("input#user-search-field.chat-group-form__input").keyup(function(e){
     e.preventDefault();
     var input = $("input#user-search-field.chat-group-form__input").val();
+    var group_id = $('.chat__group_id').val(); 
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input,groupId: group_id},
       dataType: 'json',
       contentType: false
     })
@@ -40,6 +42,9 @@ function appendErrMsgToHTML(msg) {
           var htmlnew = appendUser(user);
           $("#user-search-result").append(htmlnew);
         });
+        if (input.length === 0) {
+          $(".chat-group-user.clearfix").remove();
+        };
       }
       else {
         var htmler = appendErrMsgToHTML("一致するメンバーはいません");  
@@ -49,10 +54,12 @@ function appendErrMsgToHTML(msg) {
     .fail(function() {
       alert('error');
     });
+
+
     return false;  
   });
   
-  $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(e){
+$(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(e){
     e.preventDefault();
     $(this).parent().remove();
     var name = this.getAttribute("data-user-name");

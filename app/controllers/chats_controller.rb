@@ -12,8 +12,9 @@ class ChatsController < ApplicationController
     
     if @chat.save
       respond_to do |format|
-      format.html {redirect_to group_chats_path(@group), notice: 'メッセージが送信されました'}
-      format.json
+
+      format.html {redirect_to group_chats_path(@group),notice: 'メッセージが送信されました'}
+      format.json 
     end
     else
       @chats = @group.chats.includes(:user)
